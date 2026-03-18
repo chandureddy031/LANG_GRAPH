@@ -2,7 +2,7 @@ from typing import TypedDict
 from langchain_groq import ChatGroq
 from langgraph.graph import StateGraph , END
 
-MODEL = ""
+MODEL = "openai/gpt-oss-120b"
 GROQ_API_KEY=""
 
 llm= ChatGroq(
@@ -69,3 +69,6 @@ res = app.invoke({
 })
 print(res["output"])
 print(res["input"])
+from IPython.display import Image, display
+
+display(Image(app.get_graph().draw_mermaid_png()))
